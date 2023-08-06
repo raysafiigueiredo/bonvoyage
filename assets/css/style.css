@@ -1,0 +1,136 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+:root {
+    --paleta01: #063439;
+    --paleta02: #2d546b;
+    --paleta03: #34607a;
+    --paleta04: #a2c3d7;
+    --paleta05: #878986;
+    --logo01: #37474F;
+    --logo02: #907973;
+    --logo03: #A6DDDD;
+    --logo04: #FFCA72;
+
+    --gradient01: linear-gradient(to right,
+            #063439 25%,
+            #878986,
+            #a2c3d7);
+
+    --gradient02: linear-gradient(to right,
+            #907973,
+            rgb(55, 71, 79));
+}
+
+.esse {
+    border: 1px solid red;
+}
+
+/* GEral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: var(--gradient01);
+    color: #fff;
+}
+
+#logo {
+    height: 3em;
+    height: 2em;
+}
+
+#texto-logo {
+    font-family: cursive;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+#botao-mobile {
+    background-color: var(--logo04);
+}
+
+.navbar {
+    background: var(--logo03);
+    opacity: 0.7;
+}
+
+/* Tela home */
+strong{
+    color: var(--logo03);
+    font-weight:500;
+}
+
+#bottom-search {
+    background-color: var(--logo03);
+    color: black;
+    border: none;
+}
+
+#bg-main-top {
+    background-image: url(../img/home.png);
+    background-position: center bottom;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    height: 80vh;
+}
+
+i {
+    color: var(--logo03);
+}
+
+#icon-vantagens {
+    color: var(--logo03);
+}
+
+#text-vantagens {
+    color: var(--paleta03);
+}
+
+footer {
+    background-color: var(--paleta01);
+    color: var(--logo03);
+}
+
+#redes-sociais {
+    padding: 5px;
+}
+
+#formas-pagamento {
+    background-image: url(/assets/img/pagamento.png);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 30px;
+}
+
+/* Contato */
+#formulario-contato {
+    background-image: url(/assets/img/contato2.png);
+    background-position: center bottom;
+    background-size: cover;
+    color: var(--logo01);
+    height: 70vh;
+    display: grid;
+    place-content: end;
+}
+
+#fale-conosco {
+    background-image: var(--gradient02);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+#destino {
+    background-image: url(../img/destinos.jpg);
+    background-position: center bottom;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    height: 80vh;
+}
