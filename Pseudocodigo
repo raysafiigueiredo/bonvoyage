@@ -17,13 +17,13 @@ Inicio
 
 // Seção de Comandos, procedimento, funções, operadores, etc...
 enquanto opcao <> 5 faca
-      escreval ("****************")
-      escreval ("* BEM-VINDO(A) AO GTUR Agência de Turismo  *")
-      escreval ("****************")
+      escreval ("******")
+      escreval ("Bem vindo a Bon Voyage")
+      escreval ("******")
       escreval ()
-      escreval ("(1)Cadastrar raysa")
-      escreval ("(2)Pesquisar raysa")
-      escreval ("(3)Raysa cadastrada")
+      escreval ("(1)Cadastrar pessoa")
+      escreval ("(2)Pesquisar pessoa")
+      escreval ("(3)Pessoa cadastrada")
       escreval ("(4)Nossas disponibilidade de destino")
       escreval ("(5)Sair")
       escreva  ("escolha uma opção: ")
@@ -31,13 +31,13 @@ enquanto opcao <> 5 faca
 
    se opcao = 1 entao
    limpatela
-    cadastrar_raysa ()
+    cadastrar_pessoa ()
    fimse
 
 
    se opcao = 2 entao
    limpatela
-    pesquisar_raysa ()
+    pesquisar_pessoa ()
     fimse
     
     se opcao = 3 entao
@@ -52,7 +52,7 @@ enquanto opcao <> 5 faca
 
     se opcao = 5 entao
       para i de 0 até 1 faca
-      raysa[i] <-"x"
+      pessoa[i] <-"x"
       fimpara
       escreval ()
       escreval ()
@@ -109,9 +109,9 @@ inicio
           inicializa ()
         fimse
        fimpara
-       escreval (" ________ ")
+       escreval (" ____ ")
        escreval ("|Cadastro cheio, aperte enter para voltar ao início |")
-       escreval (" ________")
+       escreval (" ____")
        leia (enter)
        limpatela
        inicializa ()
@@ -200,13 +200,13 @@ para i de 0 ate 1 faca
    escreval("Porque quer viajar: ", porque quer viajar[i])
    escreval()
    escreval()
-   escreval ("****************")
+   escreval ("******")
    escreval ("*      Destinos disponíveis?:     *")
-   escreval ("****************")
+   escreval ("******")
    escreval ()
-   escreval ("(1)Pacote 7 Dias França: R$ 4.500,00 por pessoa.")
-   escreval ("(2)Pacote 7 Dias Espanha: R$ 7.500,00 por pessoa.")
-   escreval ("(3)Pacote 7 Dias Antártica: R$ 9.500,00 por pessoa.")
+   escreval ("(1)Pacote 7 Dias França: R$ 6.500 por pessoa")
+   escreval ("(2)Pacote 7 Dias Espanha: R$ 338.500por pessoa")
+   escreval ("(3)Pacote 7 Dias Antártica: R$ 5.500 por pessoa")
    escreval ()
    escreval  ("Escolha a opção desejada: ")
      leia (destino[j])
