@@ -1,241 +1,79 @@
+Algoritmo "Cadastro BONVOYAGE"
+
+// Disciplina  : [Atividade Prática do Módulo 2]
+// Professor   : Marcelo Vasques
+// Descrição   : Agencia de Viagens Bon Voyage
+// Autor(a)    : Raysa Souza Livinston Figueiredo
+// Data atual  : 03/08/2023
+
+Const
+
+   max = 2    //variável constante para número máximo de usuários
+
 Var
 
- pessoa: vetor [0..1] de caracter
-  documento: vetor [0..1] de caracter
-  casa: vetor [0..1] de caracter
-  telefone: vetor [0..1] de caracter
-  motivo da viagem: vetor [0..1] de caracter
-  local: vetor [0..2] de caracter
-  Pessoa: logico
-  i, j: inteiro
-  opcao: inteiro
-  pessoa: caracter
-  enter: logico
+   menu, nc, nd, consulta :inteiro
+   nomeDestino, nomeCliente:vetor [1..max] de caractere
+   confirmar, confirmaOpcao:caractere
 
-Procedimento inicializa ()
 Inicio
 
-// Seção de Comandos, procedimento, funções, operadores, etc...
-enquanto opcao <> 5 faca
-      escreval ("******")
-      escreval ("Bem vindo a Bon Voyage")
-      escreval ("******")
-      escreval ()
-      escreval ("(1)Cadastrar pessoa")
-      escreval ("(2)Pesquisar pessoa")
-      escreval ("(3)Pessoa cadastrada")
-      escreval ("(4)Nossas disponibilidade de destino")
-      escreval ("(5)Sair")
-      escreva  ("escolha uma opção: ")
-      leia (opcao)
+   nc <- 1
+   nd <- 1
 
-   se opcao = 1 entao
-   limpatela
-    cadastrar_pessoa ()
-   fimse
+   repita
+      escreval("==============================")
+      escreval("|   Bem vindo a Bon Voyage   |")
+      escreval("==============================")
+      escreval("")
+      escreval("   O que você deseja fazer?")
+      escreval("   1 - Cadastrar cliente ")
+      escreval("   2 - Cadastrar destino")
+      escreval("   3 - Consultar cliente ")
+      escreval("   4 - Consultar destino")
+      escreval("   0 - Sair")
+      escreval("")
 
+      leia(menu)
 
-   se opcao = 2 entao
-   limpatela
-    pesquisar_pessoa ()
-    fimse
-    
-    se opcao = 3 entao
-    limpatela
-    adiciona_banco_de_dados ()
-    fimse
-    
-    se opcao = 4 entao
-    limpatela
-    locais_disponiveis ()
-    fimse
-
-    se opcao = 5 entao
-      para i de 0 até 1 faca
-      pessoa[i] <-"x"
-      fimpara
-      escreval ()
-      escreval ()
-      escreval ("Tudo certinho,obrigado!")
-      leia (enter)
       limpatela
-    fimse
+      escolha menu
 
-    
-    se opcao > 5 entao
-    escreval ()
-    escreval ()
-    escreval(" Você ainda não escolheu uma opçao, aperte enterpara fazer a escolha de uma opção entre 1 e 5.")
-    leia (enter)
-    limpatela
-    fimse
+      caso 1
+         repita
+            escreva("Informe o nome do cliente: ")
+            leia(nomeCliente[nc])
+            nc <- nc + 1
 
+            escreval("")
+            escreva("Deseja cadastrar um novo cliente? (s/n): ")
+            leia(confirmar)
+            limpatela
+         ate (confirmar <> "s")
 
-fimenquanto
-fimprocedimento
+      caso 2
+         repita
+            escreva("Informe o nome do destino: ")
+            leia(nomeDestino[nd])
+            nd <- nd + 1
 
+            escreval("")
+            escreva("Deseja cadastrar um novo destino? (s/n): ")
+            leia(confirmar)
+            limpatela
+         ate (confirmar <> "s")
 
-procedimento cadastrar_pessoa ()
-inicio
+      caso 3
+         para consulta de 1 ate nc faca
+            escreval(nomeCliente[consulta])
+         fimpara
 
+      caso 4
+         para consulta de 1 ate nd faca
+            escreval(nomeDestino[consulta])
+         fimpara
 
-      escreval ("Cadastro da pessoa:")
-      escreval ()
+      fimescolha
+   ate menu = 0
 
-
-      para i de 0 ate 1 faca
-        se (pessoa [i]="")entao
-          escreva("Nome do(a) pessoa: ")
-          leia(pessoa[i])
-          escreva("Documento: ")
-          leia(documento[i])
-          escreva("Casa")
-          leia(casa[i])
-          escreva("Telefone: ")
-          leia(telefone[i])
-          escreva("Porque quer viajar: ")
-          leia(porque [i])
-          i <- i+1
-          escreval()
-          escreval ()
-          escreval("+++++++++++++++++++++++++++++++++")
-          escreval("+Vc foi cadastrado!+")
-          escreval("+++++++++++++++++++++++++++++++++")
-          escreval ()
-          escreval ()
-          escreval("Aperte enter para voltar a primeira opção!")
-          leia (enter)
-          limpatela
-          inicializa ()
-        fimse
-       fimpara
-       escreval (" ____ ")
-       escreval ("|Cadastro cheio, aperte enter para voltar ao início |")
-       escreval (" ____")
-       leia (enter)
-       limpatela
-       inicializa ()
-fimprocedimento
-
-
-procedimento banco_de_dados ()
-inicio
-
-se pessoa[i] = "" entao
-  escreval ()
-  escreval ()
-  escreval ("Nenhuma pessoa cadastrada!")
-  escreval ()
-senao
-  escreval ("Pessoas Cadastradas: ")
-  escreval ()
-  para i de 0 ate 1 faca
-   escreval ()
-   escreval ()
-   escreval("Nome do(a) pessoa: ", pessoa [i])
-   escreval("Documento: ", documento[i])
-   escreval("Casa: ", casa[i])
-   escreval("telefone: ", telefone [i])
-   escreval("Porque quer viajar: ", motivo[i])
-   escreval()
-   fimpara
-fimse
-escreval ("Aperte enter para voltar ao início.")
-leia (enter)
-limpatela
-inicializa ()
-limpatela
-fimprocedimento
-
-procedimento pesquisar_pessoa ()
-inicio
-
-
-
-escreva ("Digite o nome da pessoa que deseja procurar: ")
-leia (pessoa)
-pessoaExistente <- falso
-para i de 0 ate 1 faca
-se pessoa=pessoa[i] entao
-PessoaExistente <- verdadeiro
-escreval("Nome da pessoa: ", pessoa[i])
-escreval("Documento: ", documento[i])
-escreval("Casa: ", casa[i])
-escreval("Telefone: ", telefone[i])
-escreval("Porque quer viajar: ", porque quer viajar[i])
-escreval()
-escreval ("Pessoa encontrada.")
-escreval ()
-i <- 1
-escreval ("Aperte enter para voltar ao início.")
-leia (enter)
-fimse
-fimpara
-se pessoaExistente = falso entao
-escreval ()
-escreval ()
-escreval ("Pessoa não encontrada  ou opção inválida! verificar os dados!")
-leia (enter)
-fimse
-limpatela
-inicializa ()
-fimprocedimento
-
-
-
-
-procedimento destinos_disponiveis ()
-inicio
-
-escreva ("Digite o nome da pessoa ")
-escreva (" deseja escolher o destino? ")
-escreval ()
-leia (pessoa)
-para i de 0 ate 1 faca
-  se pessoa=pessoa[i] entao
-   escreval("Nome da pessoa: ", pessoa[i])
-   escreval("Documento: ", documento[i])
-   escreval("Casa: ", casa[i])
-   escreval("Telefone: ",telefone[i])
-   escreval("Porque quer viajar: ", porque quer viajar[i])
-   escreval()
-   escreval()
-   escreval ("******")
-   escreval ("*      Destinos disponíveis?:     *")
-   escreval ("******")
-   escreval ()
-   escreval ("(1)Pacote 7 Dias França: R$ 6.500 por pessoa")
-   escreval ("(2)Pacote 7 Dias Espanha: R$ 338.500por pessoa")
-   escreval ("(3)Pacote 7 Dias Antártica: R$ 5.500 por pessoa")
-   escreval ()
-   escreval  ("Escolha a opção desejada: ")
-     leia (destino[j])
-     i <- i+j
-   limpatela
-   escreval ("")
-   escreval ("Escolha realizada com sucesso!")
-   escreval ("")
-   escreval ("Aperte enter para voltar à tela inicial.")
-   leia (enter)
-   limpatela
-   inicializa ()
-  senao
-  escreval ()
-  escreval ()
-  escreval ("pessoa não encontrada opção inválida! Favor verificar os dados!")
-  leia (enter)
-  limpatela
- fimse
-  limpatela
-  inicializa ()
-
-
-
-fimpara
-limpatela
-fimprocedimento
-
-
-inicio
-      inicializa ()
-fimalgoritmo
+Fimalgoritmo
