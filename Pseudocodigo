@@ -1,0 +1,79 @@
+Algoritmo "Cadastro BONVOYAGE"
+
+// Disciplina  : [Atividade Prática do Módulo 2]
+// Professor   : Marcelo Vasques
+// Descrição   : Agencia de Viagens Bon Voyage
+// Autor(a)    : Raysa Souza Livinston Figueiredo
+// Data atual  : 03/08/2023
+
+Const
+
+   max = 2    //variável constante para número máximo de usuários
+
+Var
+
+   menu, nc, nd, consulta :inteiro
+   nomeDestino, nomeCliente:vetor [1..max] de caractere
+   confirmar, confirmaOpcao:caractere
+
+Inicio
+
+   nc <- 1
+   nd <- 1
+
+   repita
+      escreval("==============================")
+      escreval("|   Bem vindo a Bon Voyage   |")
+      escreval("==============================")
+      escreval("")
+      escreval("   O que você deseja fazer?")
+      escreval("   1 - Cadastrar cliente ")
+      escreval("   2 - Cadastrar destino")
+      escreval("   3 - Consultar cliente ")
+      escreval("   4 - Consultar destino")
+      escreval("   0 - Sair")
+      escreval("")
+
+      leia(menu)
+
+      limpatela
+      escolha menu
+
+      caso 1
+         repita
+            escreva("Informe o nome do cliente: ")
+            leia(nomeCliente[nc])
+            nc <- nc + 1
+
+            escreval("")
+            escreva("Deseja cadastrar um novo cliente? (s/n): ")
+            leia(confirmar)
+            limpatela
+         ate (confirmar <> "s")
+
+      caso 2
+         repita
+            escreva("Informe o nome do destino: ")
+            leia(nomeDestino[nd])
+            nd <- nd + 1
+
+            escreval("")
+            escreva("Deseja cadastrar um novo destino? (s/n): ")
+            leia(confirmar)
+            limpatela
+         ate (confirmar <> "s")
+
+      caso 3
+         para consulta de 1 ate nc faca
+            escreval(nomeCliente[consulta])
+         fimpara
+
+      caso 4
+         para consulta de 1 ate nd faca
+            escreval(nomeDestino[consulta])
+         fimpara
+
+      fimescolha
+   ate menu = 0
+
+Fimalgoritmo
